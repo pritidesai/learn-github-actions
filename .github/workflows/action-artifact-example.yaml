@@ -56,7 +56,7 @@ jobs:
       - name: step 1 - Download artifacts to a temp folder
         uses: actions/download-artifact@v3
         with:
-          name: downloads-1
+          name: assets-for-download-1
       
       - name: Display structure of downloaded files
         run: ls -R
