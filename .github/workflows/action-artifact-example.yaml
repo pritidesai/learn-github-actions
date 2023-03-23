@@ -25,7 +25,7 @@ jobs:
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 
-          name: assets-for-download
+          name: assets-for-download-1
           path: downloads-1
 
   build-artifacts-2:
@@ -46,21 +46,29 @@ jobs:
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 
-          name: assets-for-download
+          name: assets-for-download-2
           path: downloads-2
           
-  build-artifacts-3:
+  download-build-artifacts-1:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Step 1 - Create a temporary artifact downloads folder
-        run: mkdir downloads-2
         
-      - name: step 2 - Add artifacts to publish to the temp folder
-        run: |
-          cd downloads-2
-          echo 'alpha'    > alpha-3.html
-          echo 'bravo'    > bravo-3.html
-          echo 'charlie'  > charlie-3.html
-          cd ..
-    
+      - name: step 1 - Download artifacts to a temp folder
+        uses: actions/download-artifacts@v3
+        with:
+          name: assets-for-downloads-1
+      
+      - name: Display structure of downloaded files
+        run: ls -R
+
+  download-build-artifacts-2:
+    runs-on: ubuntu-latest
+    steps:
+        
+      - name: step 1 - Download artifacts to a temp folder
+        uses: actions/download-artifacts@v3
+        with:
+          name: assets-for-downloads-2
+      
+      - name: Display structure of downloaded files
+        run: ls -R
