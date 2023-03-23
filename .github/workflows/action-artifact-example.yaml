@@ -17,9 +17,9 @@ jobs:
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
           cd downloads-1
-          echo 'alpha'    > alpha.html
-          echo 'bravo'    > bravo.html
-          echo 'charlie'  > charlie.html
+          echo 'alpha'    > alpha-1.html
+          echo 'bravo'    > bravo-1.html
+          echo 'charlie'  > charlie-1.html
           cd ..
     
       - name: Step 3 - Use the Upload Artifact GitHub Action
@@ -38,9 +38,9 @@ jobs:
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
           cd downloads-2
-          echo 'alpha'    > alpha.html
-          echo 'bravo'    > bravo.html
-          echo 'charlie'  > charlie.html
+          echo 'alpha'    > alpha-2.html
+          echo 'bravo'    > bravo-2.html
+          echo 'charlie'  > charlie-2.html
           cd ..
     
       - name: Step 3 - Use the Upload Artifact GitHub Action
@@ -59,8 +59,8 @@ jobs:
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
           cd downloads-2
-          echo 'alpha'    > alpha.html
-          echo 'bravo'    > bravo.html
-          echo 'charlie'  > charlie.html
+          echo 'alpha'    > alpha-3.html
+          echo 'bravo'    > bravo-3.html
+          echo 'charlie'  > charlie-3.html
           cd ..
     
